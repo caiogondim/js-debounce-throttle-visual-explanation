@@ -94,7 +94,6 @@ var exp = (function() {
       this.dom.exp.on('mouseleave', function(event) {
         console.log('mouse leave triggered')
         clearInterval(this.draw.interval)
-        this.reset()
       }.bind(this))
     },
 

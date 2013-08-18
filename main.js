@@ -19,9 +19,11 @@ var exp = (function() {
     },
 
     bindEvents: function() {
-      this.onMouseEnter()
-      this.onMouseLeave()
-      this.onMouseMove()
+      this.onMouseEnterExp()
+      this.onMouseLeaveExp()
+      this.onMouseMoveExp()
+      this.onMouseEnterModal()
+      this.onMouseLeaveBody()
     },
 
     draw: function() {
@@ -32,14 +34,6 @@ var exp = (function() {
       this.wasMouseMoveThrottledTriggered = false
       console.log('draw setInterval')
       this.draw.interval = setInterval(function() {
-        if (this.draw.iterationCount >= this.ITERATION_MAX) {
-          // clearInterval(this.draw.interval)
-          // return null
-          this.reset()
-        }
-
-        console.log('draw iteration')
-
         if (this.wasMouseMoveVanillaTriggered) {
           this.dom.vanillaEvent
             .find('.exp__rail')
@@ -84,14 +78,14 @@ var exp = (function() {
       this.dom.exp.find('.exp__rail *').hide()
     },
 
-    onMouseEnter: function() {
+    onMouseEnterExp: function() {
       this.dom.exp.on('mouseenter', function(event) {
         console.log('mouse enter triggered')
         this.draw()
       }.bind(this))
     },
 
-    onMouseLeave: function() {
+    onMouseLeaveExp: function() {
       this.dom.exp.on('mouseleave', function(event) {
         console.log('mouse leave triggered')
         clearInterval(this.draw.interval)
@@ -99,7 +93,7 @@ var exp = (function() {
       }.bind(this))
     },
 
-    onMouseMove: function() {
+    onMouseMoveExp: function() {
       this.dom.exp.on('mousemove', function(event) {
         console.log('mouse move triggered')
         this.handleVanillaMouseMove()
@@ -151,6 +145,28 @@ var exp = (function() {
           }
         }
     }()),
+
+    onMouseEnterModal: function() {
+      this.onMouseEnterModal.timeout = null
+
+      $('.modal').on('mouseenter', function(event) {
+        $('.modal').addClass('modal--hidden')
+        this.onMouseEnterModal.timeout = setTimeout(function(){
+          $('.modal').css('z-index', '0')
+        }.bind(this), 1000)
+      }.bind(this))
+    },
+
+    onMouseLeaveBody: function() {
+      $('body').on('mouseleave', function(event) {
+        console.log('UUUU')
+        clearTimeout(this.onMouseEnterModal.timeout)
+        $('.modal')
+          .removeClass('modal--hidden')
+          .css('z-index', '2')
+        console.log('UUUU')
+      }.bind(this))
+    },
 
     consoleLocalOnly: function() {
       // monkey patch to run console.log only in localhost during development

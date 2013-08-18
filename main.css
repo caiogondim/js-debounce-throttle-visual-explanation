@@ -3,8 +3,13 @@
 }
 
 body {
-  background-color: #FDF6E1;
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
+
+
+/* experiment --------------------------------------------------------------- */
 
 .exp {
   width: 700px;
@@ -14,7 +19,8 @@ body {
   top: 50%;
   margin-top: -216px;
   margin-left: -350px;
-  background-color: #FDF6E1;
+  background-color: white;
+  z-index: 1;
 }
 
 .exp__item {
@@ -104,4 +110,65 @@ body {
 
 .exp__tick-fired--throttle {
   background-color: #CB4B16;
+}
+
+
+/* modal -------------------------------------------------------------------- */
+
+.modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: opacity 1s ease-in-out;
+}
+
+.modal--hidden {
+  opacity: 0;
+  /*z-index: 0;*/
+}
+
+.modal__title {
+  font-size: 48px;
+  color: #DDD;
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+  display: inline-block;
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -295px;
+  text-transform: uppercase;
+}
+
+.modal__mouse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -15px;
+  -webkit-animation-name: mouse-call-to-action;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes mouse-call-to-action {
+  0% {
+    -webkit-transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg) translate(-50px, 0);
+  }
 }

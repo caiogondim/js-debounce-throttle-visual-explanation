@@ -27,7 +27,9 @@ var exp = (function() {
     },
 
     draw: function() {
-      this.draw.iterationCount = 0
+      if (!this.draw.iterationCount) {
+        this.draw.iterationCount = 0
+      }
 
       this.wasMouseMoveVanillaTriggered = false
       this.wasMouseMoveDebouncedTriggered = false
@@ -72,7 +74,7 @@ var exp = (function() {
         this.wasMouseMoveVanillaTriggered = false
         this.wasMouseMoveDebouncedTriggered = false
         this.wasMouseMoveThrottledTriggered = false
-
+        console.log(this.draw.iterationCount)
         this.draw.iterationCount++
       }.bind(this), this.TIME_INTERVAL)
     },
@@ -111,8 +113,6 @@ var exp = (function() {
     },
 
     handleDebouncedMouseMove: (function () {
-      'use strict'
-
       var timeWindow = 200
       var timeout = null
 
@@ -132,8 +132,6 @@ var exp = (function() {
     }()),
 
     handleThrottledMouseMove: (function () {
-        'use strict'
-
         var timeWindow = 400
         var lastExecution = new Date((new Date()).getTime() - timeWindow)
 
@@ -174,10 +172,6 @@ var exp = (function() {
         $('.exp')
           .addClass('exp--hidden')
       }.bind(this))
-    },
-
-    showModal: function() {
-
     },
 
     consoleLocalOnly: function() {

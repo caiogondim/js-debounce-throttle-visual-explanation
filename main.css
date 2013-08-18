@@ -71,49 +71,49 @@ body {
   height: 100px;
 }
 
-.exp__tick {
+.exp__tic {
   float: left;
   margin-right: 2px;
   width: 18px;
   height: 100px;
 }
 
-.exp__tick-fired {
+.exp__tic-fired {
   float: left;
   margin-right: 2px;
   width: 18px;
   height: 100px;
 }
 
-.exp__tick:last-child {
+.exp__tic:last-child {
   margin-right: 0;
 }
 
-.exp__tick-fired:last-child {
+.exp__tic-fired:last-child {
   margin-right: 0;
 }
 
-.exp__tick--vanilla {
+.exp__tic--vanilla {
   border-bottom: 25px solid #859900;
 }
 
-.exp__tick-fired--vanilla {
+.exp__tic-fired--vanilla {
   background-color: #859900;
 }
 
-.exp__tick--debounce {
+.exp__tic--debounce {
   border-bottom: 25px solid #6C71C4;
 }
 
-.exp__tick-fired--debounce {
+.exp__tic-fired--debounce {
   background-color: #6C71C4;
 }
 
-.exp__tick--throttle {
+.exp__tic--throttle {
   border-bottom: 25px solid #CB4B16;
 }
 
-.exp__tick-fired--throttle {
+.exp__tic-fired--throttle {
   background-color: #CB4B16;
 }
 

@@ -42,31 +42,31 @@ var exp = (function() {
         if (this.wasMouseMoveVanillaTriggered) {
           this.dom.vanillaEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick-fired exp__tick-fired--vanilla"></span>')
+            .append('<span class="exp__tic-fired exp__tic-fired--vanilla"></span>')
         } else {
           this.dom.vanillaEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick exp__tick--vanilla"></span>')
+            .append('<span class="exp__tic exp__tic--vanilla"></span>')
         }
 
         if (this.wasMouseMoveDebouncedTriggered) {
           this.dom.debouncedEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick-fired exp__tick-fired--debounce"></span>')
+            .append('<span class="exp__tic-fired exp__tic-fired--debounce"></span>')
         } else {
           this.dom.debouncedEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick exp__tick--debounce"></span>')
+            .append('<span class="exp__tic exp__tic--debounce"></span>')
         }
 
         if (this.wasMouseMoveThrottledTriggered) {
           this.dom.throttledEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick-fired exp__tick-fired--throttle"></span>')
+            .append('<span class="exp__tic-fired exp__tic-fired--throttle"></span>')
         } else {
           this.dom.throttledEvent
             .find('.exp__rail')
-            .append('<span class="exp__tick exp__tick--throttle"></span>')
+            .append('<span class="exp__tic exp__tic--throttle"></span>')
         }
 
         this.wasMouseMoveVanillaTriggered = false

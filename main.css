@@ -21,6 +21,11 @@ body {
   margin-left: -350px;
   background-color: white;
   z-index: 1;
+  transition: -webkit-filter 1s ease-in-out;
+}
+
+.exp--hidden {
+  -webkit-filter: blur(7px);
 }
 
 .exp__item {

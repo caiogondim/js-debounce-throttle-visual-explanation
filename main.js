@@ -156,6 +156,8 @@ var exp = (function() {
 
       $('.modal').on('mouseenter', function(event) {
         $('.modal').addClass('modal--hidden')
+        $('.exp').removeClass('exp--hidden')
+
         this.onMouseEnterModal.timeout = setTimeout(function(){
           $('.modal').css('z-index', '0')
         }.bind(this), 1000)
@@ -164,13 +166,19 @@ var exp = (function() {
 
     onMouseLeaveBody: function() {
       $('body').on('mouseleave', function(event) {
-        console.log('UUUU')
         clearTimeout(this.onMouseEnterModal.timeout)
+
         $('.modal')
           .removeClass('modal--hidden')
           .css('z-index', '2')
-        console.log('UUUU')
+
+        $('.exp')
+          .addClass('exp--hidden')
       }.bind(this))
+    },
+
+    showModal: function() {
+
     },
 
     consoleLocalOnly: function() {

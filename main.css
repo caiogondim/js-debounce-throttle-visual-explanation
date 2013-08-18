@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FDF6E1;
+}
+
+.exp {
+  width: 700px;
+  height: 432px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -216px;
+  margin-left: -350px;
+  background-color: #FDF6E1;
+}
+
+.exp__item {
+  height: 144px;
+  position: relative;
+}
+
+.exp__title {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  bottom: 85px;
+  left: 50px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.exp__title--vanilla {
+  color: #859900;
+}
+
+.exp__title--debounce {
+  color: #6C71C4;
+}
+
+.exp__title--throttle {
+  color: #CB4B16;
+}
+
+.exp__rail {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #EEE8D5;
+  height: 100px;
+}
+
+.exp__tick {
+  float: left;
+  margin-right: 2px;
+  width: 18px;
+  height: 100px;
+}
+
+.exp__tick-fired {
+  float: left;
+  margin-right: 2px;
+  width: 18px;
+  height: 100px;
+}
+
+.exp__tick:last-child {
+  margin-right: 0;
+}
+
+.exp__tick-fired:last-child {
+  margin-right: 0;
+}
+
+.exp__tick--vanilla {
+  border-bottom: 25px solid #859900;
+}
+
+.exp__tick-fired--vanilla {
+  background-color: #859900;
+}
+
+.exp__tick--debounce {
+  border-bottom: 25px solid #6C71C4;
+}
+
+.exp__tick-fired--debounce {
+  background-color: #6C71C4;
+}
+
+.exp__tick--throttle {
+  border-bottom: 25px solid #CB4B16;
+}
+
+.exp__tick-fired--throttle {
+  background-color: #CB4B16;
+}

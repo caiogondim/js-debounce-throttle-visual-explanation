@@ -83,6 +83,7 @@ body {
   margin-right: 2px;
   width: 18px;
   height: 100px;
+  transition: all 0.1s ease-in;
 }
 
 .exp__tic:last-child {
@@ -91,6 +92,7 @@ body {
 
 .exp__tic-fired:last-child {
   margin-right: 0;
+  -webkit-transform: scale(1.2);
 }
 
 .exp__tic--vanilla {

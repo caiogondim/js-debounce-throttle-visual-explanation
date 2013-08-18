@@ -26,10 +26,16 @@ var exp = (function() {
 
     draw: function() {
       this.draw.iterationCount = 0
+
+      this.wasMouseMoveVanillaTriggered = false
+      this.wasMouseMoveDebouncedTriggered = false
+      this.wasMouseMoveThrottledTriggered = false
+      console.log('draw setInterval')
       this.draw.interval = setInterval(function() {
         if (this.draw.iterationCount >= this.ITERATION_MAX) {
-          clearInterval(this.draw.interval)
-          return null
+          // clearInterval(this.draw.interval)
+          // return null
+          this.reset()
         }
 
         console.log('draw iteration')
@@ -74,7 +80,8 @@ var exp = (function() {
 
     reset: function() {
       console.log('reset')
-      this.dom.exp.find('.exp__rail *').remove()
+      this.draw.iterationCount = 0
+      this.dom.exp.find('.exp__rail *').hide()
     },
 
     onMouseEnter: function() {
@@ -106,24 +113,24 @@ var exp = (function() {
     },
 
     handleDebouncedMouseMove: (function () {
-        'use strict'
+      'use strict'
 
-        var timeWindow = 200
-        var timeout
+      var timeWindow = 200
+      var timeout = null
 
-        var debouncedEvent = function (args) {
-          console.log('mouse move debounced triggered')
-          this.wasMouseMoveDebouncedTriggered = true
-        }
+      var debouncedEvent = function (args) {
+        console.log('mouse move debounced triggered')
+        this.wasMouseMoveDebouncedTriggered = true
+      }
 
-        return function() {
-          var context = this
-          var args = arguments
-          clearTimeout(timeout)
-          timeout = setTimeout(function(){
-            debouncedEvent.apply(context, args)
-          }, timeWindow)
-        }
+      return function() {
+        var context = this
+        var args = arguments
+        clearTimeout(timeout)
+        timeout = setTimeout(function(){
+          debouncedEvent.apply(context, args)
+        }, timeWindow)
+      }
     }()),
 
     handleThrottledMouseMove: (function () {
@@ -140,13 +147,13 @@ var exp = (function() {
         return function() {
           if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
             lastExecution = new Date()
-            return throttledEvent.apply(this, arguments)
+            return throttledEvent.bind(this)()
           }
         }
     }()),
 
     consoleLocalOnly: function() {
-      // monkey patch to run console.log only in localhost
+      // monkey patch to run console.log only in localhost during development
 
       if (document.location.href.indexOf('://localhost') === -1) {
         console.log = function() {}

@@ -34,6 +34,11 @@ var exp = (function() {
       this.wasMouseMoveThrottledTriggered = false
       console.log('draw setInterval')
       this.draw.interval = setInterval(function() {
+
+        if (this.draw.iterationCount >= this.ITERATION_MAX) {
+          this.reset()
+        }
+
         if (this.wasMouseMoveVanillaTriggered) {
           this.dom.vanillaEvent
             .find('.exp__rail')

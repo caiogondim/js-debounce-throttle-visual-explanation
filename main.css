@@ -1,4 +1,5 @@
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -94,6 +95,10 @@ body {
 .exp__tic-fired:last-child {
   margin-right: 0;
   -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .exp__tic--vanilla {
@@ -170,6 +175,12 @@ body {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   -webkit-animation-direction: alternate;
+  -moz-animation-name: mouse-call-to-action;
+  -moz-animation-duration: 3s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -moz-animation-direction: alternate;
 }
 
 @-webkit-keyframes mouse-call-to-action {
@@ -178,5 +189,14 @@ body {
   }
   100% {
     -webkit-transform: rotate(-15deg) translate(-50px, 0);
+  }
+}
+
+@-moz-keyframes mouse-call-to-action {
+  0% {
+    -moz-transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    -moz-transform: rotate(-15deg) translate(-50px, 0);
   }
 }

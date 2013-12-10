@@ -14,5 +14,10 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/caiogondim/js-debounce-throttle-visual-explanation/issues"
+  },
+  "devDependencies": {
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt": "~0.4.2"
   }
 }

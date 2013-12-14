@@ -19,6 +19,7 @@
     "grunt-contrib-csslint": "~0.2.0",
     "grunt-contrib-connect": "~0.5.0",
     "grunt": "~0.4.2",
-    "grunt-contrib-compass": "~0.7.0"
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-jshint": "~0.7.2"
   }
 }

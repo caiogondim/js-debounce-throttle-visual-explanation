@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         "universal-selector": false,
         "box-sizing": false
       },
-      src: ["./*.css"]
+      src: ["./styles/*.css"]
     },
     jshint: {
       files: [

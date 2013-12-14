@@ -1,0 +1,18 @@
+{
+  "name": "js-debounce-throttle-visual-explanation",
+  "version": "0.0.0",
+  "homepage": "https://github.com/caiogondim/js-debounce-throttle-visual-explanation",
+  "authors": [
+    "Caio Gondim <me@caiogondim.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

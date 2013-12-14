@@ -1,7 +1,7 @@
 # Debounce and Throttle patterns, in a more interactive way
 
 <img
-    src="https://raw.github.com/caiogondim/js-debounce-throttle-visual-explanation/gh-pages/logo.png"
+    src="https://raw.github.com/caiogondim/js-debounce-throttle-visual-explanation/gh-pages/images/logo.png"
     alt="Logo"
     align="right"
 />

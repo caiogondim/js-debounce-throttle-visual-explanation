@@ -183,6 +183,27 @@ body {
   -moz-animation-direction: alternate;
 }
 
+/*
+  Shows a modal in portuguese if its inside loopinfinito.com.br, shows the
+  english one otherwise */
+@media (max-width: 700px) {
+  .modal--pt {
+    display: block;
+  }
+  .modal--en {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) {
+  .modal--pt {
+    display: none;
+  }
+  .modal--en {
+    display: block;
+  }
+}
+
 @-webkit-keyframes mouse-call-to-action {
   0% {
     -webkit-transform: rotate(0) translate(0, 0);

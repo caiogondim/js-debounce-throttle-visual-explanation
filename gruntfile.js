@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-connect")
   grunt.loadNpmTasks("grunt-contrib-csslint")
   grunt.loadNpmTasks("grunt-contrib-jshint")
+  grunt.loadNpmTasks("grunt-contrib-compass")
   grunt.loadNpmTasks("grunt-notify")
 
   grunt.initConfig({
@@ -31,6 +32,16 @@ module.exports = function (grunt) {
         "scripts/maini.js"
       ],
       options: grunt.file.readJSON(".jshintrc")
+    },
+    compass: {
+      default: {
+        options: {
+          sassDir: "styles/",
+          cssDir: "styles/",
+          outputStyle: "compressed",
+          noLineComments: true
+        }
+      }
     },
   })
 

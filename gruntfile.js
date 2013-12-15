@@ -9,10 +9,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-compass")
   grunt.loadNpmTasks("grunt-contrib-watch")
   grunt.loadNpmTasks("grunt-notify")
+  grunt.loadNpmTasks("grunt-concurrent")
 
   grunt.initConfig({
     connect: {
-      dev: {
+      default: {
         options: {
           port: 3000,
           base: ".",
@@ -49,9 +50,18 @@ module.exports = function (grunt) {
         files: "styles/*.scss",
         tasks: ["compass", "csslint"]
       }
+    },
+    concurrent: {
+      default: {
+        tasks: ["watch:sass", "connect"],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
     }
   })
 
-  grunt.registerTask("run", ["connect:dev"])
+  grunt.registerTask("run", ["concurrent"])
   grunt.registerTask("test", ["csslint", "jshint"])
+  grunt.registerTask("default", "run")
 }

@@ -7,6 +7,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-csslint")
   grunt.loadNpmTasks("grunt-contrib-jshint")
   grunt.loadNpmTasks("grunt-contrib-compass")
+  grunt.loadNpmTasks("grunt-contrib-watch")
   grunt.loadNpmTasks("grunt-notify")
 
   grunt.initConfig({
@@ -43,6 +44,12 @@ module.exports = function (grunt) {
         }
       }
     },
+    watch: {
+      sass: {
+        files: "styles/*.scss",
+        tasks: ["compass", "csslint"]
+      }
+    }
   })
 
   grunt.registerTask("run", ["connect:dev"])

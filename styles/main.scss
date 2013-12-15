@@ -1,7 +1,7 @@
+@import "compass/css3";
+
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
 }
 
 body {
@@ -11,7 +11,8 @@ body {
 }
 
 
-/* experiment --------------------------------------------------------------- */
+// Experiment
+// ----------
 
 .exp {
   position: absolute;
@@ -24,11 +25,13 @@ body {
   width: 700px;
   height: 432px;
   background-color: white;
-  transition: -webkit-filter 1s ease-in-out;
+  @include transition-property(filter);
+  @include transition-duration(2s);
+  @include transition-timing-function(ease-in-out);
 }
 
 .exp--hidden {
-  -webkit-filter: blur(7px);
+  @include filter(blur(7px));
 }
 
 .exp__item {
@@ -95,11 +98,7 @@ body {
 
 .exp__tic-fired:last-child {
   margin-right: 0;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
+  @include transform(scale(1.2));
 }
 
 .exp__tic--vanilla {
@@ -127,7 +126,8 @@ body {
 }
 
 
-/* modal -------------------------------------------------------------------- */
+// Modal
+// -----
 
 .modal {
   position: absolute;
@@ -136,12 +136,13 @@ body {
   height: 100%;
   background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.6);
-  transition: opacity 1s ease-in-out;
+  @include transition-property(opacity);
+  @include transition-duration(1s);
+  @include transition-timing-function(ease-in-out);
 }
 
 .modal--hidden {
   opacity: 0;
-  /*z-index: 0;*/
 }
 
 .modal__title {
@@ -171,21 +172,16 @@ body {
   left: 50%;
   margin-top: -15px;
   margin-left: -50px;
-  -webkit-animation-name: mouse-call-to-action;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -moz-animation-name: mouse-call-to-action;
-  -moz-animation-duration: 3s;
-  -moz-animation-timing-function: ease-in-out;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-direction: alternate;
+  @include animation-name(mouse-call-to-action);
+  @include animation-duration(3s);
+  @include animation-timing-function(ease-in-out);
+  @include animation-iteration-count(infinite);
+  @include animation-direction(alternate);
 }
 
-/*
-  Shows a modal in portuguese if its inside loopinfinito.com.br, shows the
-  english one otherwise */
+
+//  Shows a modal in portuguese if its inside loopinfinito.com.br,
+// shows the english one otherwise
 @media (max-width: 700px) {
   .modal--pt {
     display: block;
@@ -204,24 +200,14 @@ body {
   }
 }
 
-@-webkit-keyframes mouse-call-to-action {
+@include keyframes(mouse-call-to-action) {
   0% {
     -webkit-transform: rotate(0) translate(0, 0);
     transform: rotate(0) translate(0, 0);
   }
+
   100% {
     -webkit-transform: rotate(-15deg) translate(-50px, 0);
-    transform: rotate(-15deg) translate(-50px, 0);
-  }
-}
-
-@-moz-keyframes mouse-call-to-action {
-  0% {
-    -moz-transform: rotate(0) translate(0, 0);
-    transform: rotate(0) translate(0, 0);
-  }
-  100% {
-    -moz-transform: rotate(-15deg) translate(-50px, 0);
     transform: rotate(-15deg) translate(-50px, 0);
   }
 }

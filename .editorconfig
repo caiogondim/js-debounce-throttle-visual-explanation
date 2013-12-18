@@ -1,0 +1,17 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# PlugIns URLs
+# - TextMate: https://github.com/Mr0grog/editorconfig-textmate#readme
+# - Sublime: https://github.com/sindresorhus/editorconfig-sublime#readme
+# - Vim: https://github.com/editorconfig/editorconfig-vim#readme
+# - PyCharm: https://github.com/editorconfig/editorconfig-jetbrains#readme
+
+root = true
+
+[*]
+charset = 'utf-8'
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
